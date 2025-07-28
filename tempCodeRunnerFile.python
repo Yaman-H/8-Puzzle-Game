@@ -1,0 +1,26 @@
+import graphviz
+
+# DFA states and transitions
+dfa = graphviz.Digraph('DFA', filename='dfa.gv')
+dfa.attr(rankdir='LR', size='10')
+
+# Initial state
+dfa.attr('node', shape='doublecircle')
+dfa.node('{S,0,2}')
+
+# Other states
+dfa.attr('node', shape='circle')
+dfa.node('{1,2}')
+dfa.node('{0}')
+dfa.node('{1}')
+
+# Transitions
+dfa.edge('{S,0,2}', '{1,2}', label='a')
+dfa.edge('{1,2}', '{1,2}', label='a')
+dfa.edge('{1,2}', '{0}', label='b')
+dfa.edge('{0}', '{1}', label='a')
+dfa.edge('{0}', '{0}', label='b')
+dfa.edge('{1}', '{1}', label='a')
+dfa.edge('{1}', '{0}', label='b')
+
+dfa.view()

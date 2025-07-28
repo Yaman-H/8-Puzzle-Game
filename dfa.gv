@@ -1,0 +1,16 @@
+digraph DFA {
+	rankdir=LR size=10
+	node [shape=doublecircle]
+	"{S,0,2}"
+	node [shape=circle]
+	"{1,2}"
+	"{0}"
+	"{1}"
+	"{S,0,2}" -> "{1,2}" [label=a]
+	"{1,2}" -> "{1,2}" [label=a]
+	"{1,2}" -> "{0}" [label=b]
+	"{0}" -> "{1}" [label=a]
+	"{0}" -> "{0}" [label=b]
+	"{1}" -> "{1}" [label=a]
+	"{1}" -> "{0}" [label=b]
+}
